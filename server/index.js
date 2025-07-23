@@ -10,7 +10,16 @@ app.use(cors());
 app.use(express.json());
 
 const authRoutes = require('./routes/auth');
+const projectRoutes = require('./routes/project');
+const taskRoutes = require('./routes/task');
+const commentRoutes = require('./routes/comment');
+const notificationRoutes = require('./routes/notification');
+
 app.use('/api/auth', authRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/comments', commentRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // Example route
 app.get('/', (req, res) => {
