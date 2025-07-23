@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 // Example route
 app.get('/', (req, res) => {
   res.send('API is running');
